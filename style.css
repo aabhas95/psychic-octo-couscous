@@ -98,14 +98,80 @@ button{font:inherit}
 
 .musicBtn{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:1px solid #3674d7;background:#080d16;color:#62a0ff;font-size:22px;cursor:pointer;z-index:20000;box-shadow:0 8px 25px #0008}.musicBtn.playing{background:#1769ff;color:white}
 
-#butterflies{position:fixed;inset:0;pointer-events:none;z-index:15000;overflow:hidden}
-.butterfly{position:absolute;left:50%;top:65%;opacity:0;font-size:28px;filter:drop-shadow(0 6px 10px #0008);animation:fly var(--duration) cubic-bezier(.18,.72,.18,1) forwards;animation-delay:var(--delay)}
+#butterflies{
+position:fixed;
+inset:0;
+width:100vw;
+height:100vh;
+pointer-events:none;
+z-index:15000;
+overflow:hidden;
+}
+.butterfly{
+position:absolute;
+left:50%;
+top:65%;
+width:var(--size);
+height:var(--size);
+opacity:0;
+animation:fly var(--duration) cubic-bezier(.18,.72,.18,1) forwards;
+animation-delay:var(--delay);
+will-change:transform,opacity;
+}
+.butterfly .wing{
+position:absolute;
+top:20%;
+width:58%;
+height:78%;
+background:linear-gradient(135deg,#7db5ff 0%,#1769ff 55%,#0b3f9f 100%);
+border:1px solid #9bc4ff;
+box-shadow:0 0 8px rgba(48,130,255,.55);
+}
+.butterfly .leftWing{
+left:0;
+border-radius:80% 25% 70% 35%;
+transform-origin:100% 70%;
+animation:wingLeft .22s ease-in-out infinite alternate;
+}
+.butterfly .rightWing{
+right:0;
+border-radius:25% 80% 35% 70%;
+transform-origin:0 70%;
+animation:wingRight .22s ease-in-out infinite alternate;
+}
+.butterfly .butterflyBody{
+position:absolute;
+left:50%;
+top:27%;
+width:13%;
+height:55%;
+transform:translateX(-50%);
+background:#05070d;
+border-radius:50%;
+box-shadow:0 0 4px #8fc0ff;
+}
+@keyframes wingLeft{to{transform:rotateY(58deg) rotate(-8deg)}} 
+@keyframes wingRight{to{transform:rotateY(58deg) rotate(8deg)}} 
 @keyframes fly{
-0%{transform:translate(-50%,-50%) scale(.05) rotate(0);opacity:0}
-12%{opacity:1}
-35%{transform:translate(calc(-50% + var(--x1)),calc(-50% + var(--y1))) scale(.8) rotate(var(--r1));opacity:1}
-70%{transform:translate(calc(-50% + var(--x2)),calc(-50% + var(--y2))) scale(1.15) rotate(var(--r2));opacity:.9}
+0%{transform:translate(-50%,-50%) scale(.08) rotate(0deg);opacity:0}
+10%{opacity:1}
+32%{transform:translate(calc(-50% + var(--x1)),calc(-50% + var(--y1))) scale(.8) rotate(var(--r1));opacity:1}
+68%{transform:translate(calc(-50% + var(--x2)),calc(-50% + var(--y2))) scale(1.05) rotate(var(--r2));opacity:.95}
 100%{transform:translate(calc(-50% + var(--x3)),calc(-50% + var(--y3))) scale(.65) rotate(var(--r3));opacity:0}
+}
+
+/* Never allow inactive story screens to sit above the current screen. */
+.screen:not(.active){
+pointer-events:none;
+}
+.screen.leaving{
+z-index:1;
+}
+.screen.active{
+z-index:2;
+}
+.final{
+z-index:2;
 }
 
 @media(max-width:600px){
@@ -221,4 +287,44 @@ button{font:inherit}
   .husbandReveal{margin-top:10px}
   .photoFrame{width:210px;height:245px}
   .finalText{font-size:23px}
+}
+
+/* FINAL MOBILE SAFETY */
+@media(max-width:600px){
+  .finalContent{
+    position:relative;
+    width:94vw;
+    max-height:90svh;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:20px 0 30px;
+  }
+  .finalEnvelope{
+    width:92%;
+    height:260px;
+    transform:none;
+    margin:0 0 10px;
+  }
+  .finalLetter{
+    top:16px;
+    height:195px;
+    padding:22px 10px;
+  }
+  .finalLetter h2{font-size:43px}
+  .finalFold{height:95px}
+  .husbandReveal{
+    margin-top:8px;
+  }
+  .photoFrame{
+    width:190px;
+    height:225px;
+  }
+  .finalText{
+    margin-top:12px;
+    font-size:22px;
+    padding:0 10px 10px;
+  }
 }

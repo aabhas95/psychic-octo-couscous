@@ -25,3 +25,5 @@ If your image has another filename, either rename it to husband.jpg
 or change the src in index.html.
 
 Upload the complete contents to GitHub Pages.
+
+PHONE FIX: Butterflies are now CSS-drawn (not emoji), so they work reliably on mobile. The final page waits until the butterfly animation finishes and the YAY screen is fully removed before appearing.

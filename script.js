@@ -62,17 +62,17 @@ document.querySelectorAll("[data-next]").forEach(btn=>{
 document.getElementById("yayBtn").addEventListener("click",()=>{
   startMusic();
   launchButterflies(48);
-  setTimeout(()=>showScreen(13),7200);
+  setTimeout(()=>showScreen(13),8300);
 });
 
 document.getElementById("maybeBtn")?.addEventListener("click",()=>{});
 
 function launchButterflies(count){
   const layer=document.getElementById("butterflies");
+
   for(let i=0;i<count;i++){
-    const b=document.createElement("div");
+    const b=document.createElement("span");
     b.className="butterfly";
-    b.textContent="🦋";
 
     const side=Math.random()<.5?-1:1;
     b.style.setProperty("--x1",`${(Math.random()*22+8)*side}vw`);
@@ -86,9 +86,16 @@ function launchButterflies(count){
     b.style.setProperty("--r3",`${(Math.random()-.5)*280}deg`);
     b.style.setProperty("--delay",`${i*.09+Math.random()*.35}s`);
     b.style.setProperty("--duration",`${4.8+Math.random()*1.7}s`);
-    b.style.fontSize=`${18+Math.random()*28}px`;
+    b.style.setProperty("--size",`${18+Math.random()*20}px`);
+
+    const left=b.appendChild(document.createElement("i"));
+    const right=b.appendChild(document.createElement("i"));
+    const body=b.appendChild(document.createElement("b"));
+    left.className="wing leftWing";
+    right.className="wing rightWing";
+    body.className="butterflyBody";
 
     layer.appendChild(b);
-    setTimeout(()=>b.remove(),7600);
+    setTimeout(()=>b.remove(),8000);
   }
 }
