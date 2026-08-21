@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8fbf7">
+<meta name="theme-color" content="#07110a">
 <title>A Special Invitation for Kuljeet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,50 +11,92 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div id="butterflyLayer" aria-hidden="true"></div>
+
 <section id="cover" class="screen cover">
-  <div class="leaf leaf-1">❧</div><div class="leaf leaf-2">❧</div>
+  <div class="leaf leaf1">❧</div>
+  <div class="leaf leaf2">❧</div>
+
   <div class="envelope">
     <div class="envelope-paper">
-      <div class="heart-top">♡</div>
+      <div class="heart">♡</div>
       <p class="eyebrow">YOU'VE BEEN INVITED</p>
       <h1>A Special Invitation</h1>
-      <p class="for">JUST FOR</p>
+      <p class="just">JUST FOR</p>
       <h2>Kuljeet</h2>
       <div class="divider">♡</div>
       <p class="await">SOMETHING SPECIAL AWAITS...</p>
       <div class="seal">♥</div>
     </div>
   </div>
-  <button id="openBtn" class="btn green-btn">♡ &nbsp; OPEN INVITATION</button>
+
+  <button id="openBtn" class="btn green">♡ &nbsp; OPEN INVITATION</button>
 </section>
 
-<section id="card" class="screen card-screen hidden">
+<section id="card" class="screen cardScreen hidden">
   <div class="card">
-    <div class="botanical botanical-left">❧</div><div class="botanical botanical-right">❧</div>
-    <div class="card-inner">
-      <div class="heart-line">♡ ♡</div>
+    <div class="botanical left">❧</div>
+    <div class="botanical right">❧</div>
+
+    <div class="cardInner">
+      <div class="heartLine">♡ ♡</div>
       <h2>Kuljeet,</h2>
-      <p class="question-intro">I have a little question for you...</p>
+      <p class="intro">I have a little question for you...</p>
       <div class="divider">♥</div>
-      <p class="will-you">WILL YOU GO ON A</p>
+
+      <p class="will">WILL YOU GO ON A</p>
       <h3>Date with me?</h3>
+
       <div class="details">
-        <div class="detail"><div class="detail-icon">♡</div><span>DATE</span><strong>26TH AUGUST</strong><small>WEDNESDAY</small></div>
-        <div class="detail"><div class="detail-icon">◷</div><span>TIME</span><strong>7:00 AM</strong><small>IN THE MORNING</small></div>
-        <div class="detail"><div class="detail-icon">♡</div><span>DETAIL</span><strong>BE READY TO<br>BE PICKED UP</strong><small>🚗</small></div>
+        <div>
+          <span class="icon">♡</span>
+          <small>DATE</small>
+          <strong>26TH AUGUST</strong>
+          <em>WEDNESDAY</em>
+        </div>
+        <div>
+          <span class="icon">◷</span>
+          <small>TIME</small>
+          <strong>7:00 AM</strong>
+          <em>IN THE MORNING</em>
+        </div>
+        <div>
+          <span class="icon">♡</span>
+          <small>DETAIL</small>
+          <strong>BE READY TO<br>BE PICKED UP</strong>
+          <em>🚗</em>
+        </div>
       </div>
-      <div class="buttons">
-        <button id="yesBtn" class="btn green-btn yes">YES ♥</button>
-        <button id="maybeBtn" class="btn white-btn">MAYBE LATER 😉</button>
+
+      <div class="actions">
+        <button id="yesBtn" class="btn green yes">YES ♥</button>
+        <button id="maybeBtn" class="btn white">MAYBE LATER 😉</button>
       </div>
-      <div id="response" class="response hidden">
-        <div class="big-heart">♥</div><h4>YAY! IT'S A DATE! ❤️</h4>
-        <p>I'll be there to pick you up. Be ready! 😊</p>
+
+      <div id="success" class="success hidden">
+        <div class="successEnvelope">
+          <div class="successLetter">
+            <div class="successHeart">♥</div>
+            <h4>You said YES!</h4>
+            <p>I KNEW YOU WOULD! ♡</p>
+            <strong>IT'S A DATE!</strong>
+          </div>
+          <div class="envelopeFold"></div>
+        </div>
       </div>
+
       <p class="footer">I hope you'll say yes. ♡</p>
     </div>
   </div>
 </section>
+
+<audio id="music" loop preload="none">
+  <source src="music/date-song.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" class="musicBtn" aria-label="Play or pause music">♫</button>
+
 <script src="script.js"></script>
 </body>
 </html>
