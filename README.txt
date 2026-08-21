@@ -1,22 +1,27 @@
-KULJEET DATE INVITATION — GREEN + BLACK V2
+KULJEET INTERACTIVE DATE INVITATION — FINAL BLACK + BLUE VERSION
 
-Details:
-Guest: Kuljeet
-Date: 26th August (Wednesday)
-Time: 7:00 AM
-Detail: Be ready to be picked up
-Sender name intentionally omitted.
+Folders:
+images/
+music/
 
 MUSIC:
-Put your MP3 file in:
+The uploaded MP3 is included as:
 music/date-song.mp3
 
-The page will start the music after the visitor presses OPEN INVITATION.
-This avoids mobile-browser autoplay restrictions.
+The music starts after OPEN INVITATION and loops in the background.
 
-BUTTERFLIES:
-Pressing YES reveals the black/green confirmation envelope.
-42 butterflies are released gradually rather than instantly.
-The staggered effect lasts approximately 5–7 seconds.
+PHOTO:
+Add your photo as:
+images/husband.jpg
 
-Upload all files/folders to your GitHub Pages repository.
+After YAY:
+- 48 butterflies fly out gradually.
+- After the butterfly effect completes, the final page appears.
+- It reveals:
+  "YOUR HUSBAND LOVES YOU. ❤️"
+  followed by the photo.
+
+If your image has another filename, either rename it to husband.jpg
+or change the src in index.html.
+
+Upload the complete contents to GitHub Pages.

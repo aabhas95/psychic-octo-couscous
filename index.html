@@ -3,99 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07110a">
+<meta name="theme-color" content="#05070d">
 <title>A Special Invitation for Kuljeet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="butterflyLayer" aria-hidden="true"></div>
-
-<section id="cover" class="screen cover">
-  <div class="leaf leaf1">❧</div>
-  <div class="leaf leaf2">❧</div>
-
-  <div class="envelope">
-    <div class="envelope-paper">
-      <div class="heart">♡</div>
-      <p class="eyebrow">YOU'VE BEEN INVITED</p>
-      <h1>A Special Invitation</h1>
-      <p class="just">JUST FOR</p>
-      <h2>Kuljeet</h2>
-      <div class="divider">♡</div>
-      <p class="await">SOMETHING SPECIAL AWAITS...</p>
-      <div class="seal">♥</div>
-    </div>
-  </div>
-
-  <button id="openBtn" class="btn green">♡ &nbsp; OPEN INVITATION</button>
-</section>
-
-<section id="card" class="screen cardScreen hidden">
-  <div class="card">
-    <div class="botanical left">❧</div>
-    <div class="botanical right">❧</div>
-
-    <div class="cardInner">
-      <div class="heartLine">♡ ♡</div>
-      <h2>Kuljeet,</h2>
-      <p class="intro">I have a little question for you...</p>
-      <div class="divider">♥</div>
-
-      <p class="will">WILL YOU GO ON A</p>
-      <h3>Date with me?</h3>
-
-      <div class="details">
-        <div>
-          <span class="icon">♡</span>
-          <small>DATE</small>
-          <strong>26TH AUGUST</strong>
-          <em>WEDNESDAY</em>
-        </div>
-        <div>
-          <span class="icon">◷</span>
-          <small>TIME</small>
-          <strong>7:00 AM</strong>
-          <em>IN THE MORNING</em>
-        </div>
-        <div>
-          <span class="icon">♡</span>
-          <small>DETAIL</small>
-          <strong>BE READY TO<br>BE PICKED UP</strong>
-          <em>🚗</em>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button id="yesBtn" class="btn green yes">YES ♥</button>
-        <button id="maybeBtn" class="btn white">MAYBE LATER 😉</button>
-      </div>
-
-      <div id="success" class="success hidden">
-        <div class="successEnvelope">
-          <div class="successLetter">
-            <div class="successHeart">♥</div>
-            <h4>You said YES!</h4>
-            <p>I KNEW YOU WOULD! ♡</p>
-            <strong>IT'S A DATE!</strong>
-          </div>
-          <div class="envelopeFold"></div>
-        </div>
-      </div>
-
-      <p class="footer">I hope you'll say yes. ♡</p>
-    </div>
-  </div>
-</section>
+<div id="particles"></div>
+<div id="butterflies"></div>
 
 <audio id="music" loop preload="none">
   <source src="music/date-song.mp3" type="audio/mpeg">
 </audio>
+<button id="musicBtn" class="musicBtn" aria-label="Music">♫</button>
 
-<button id="musicBtn" class="musicBtn" aria-label="Play or pause music">♫</button>
+<main id="app">
+
+  <!-- OPENING -->
+  <section class="screen active cover" data-screen="0">
+    <div class="blue-orb"></div>
+    <div class="cover-envelope">
+      <div class="envelope-glow"></div>
+      <div class="envelope-card">
+        <span class="tiny-heart">♡</span>
+        <p class="eyebrow">A SPECIAL INVITATION</p>
+        <h1>For<br><span>Kuljeet</span></h1>
+        <div class="blue-line"></div>
+        <p class="small-caps">SOMETHING SPECIAL AWAITS...</p>
+      </div>
+    </div>
+    <button class="mainBtn" data-next>OPEN INVITATION <span>→</span></button>
+  </section>
+
+  <!-- 1 WAKE UP -->
+  <section class="screen wake" data-screen="1">
+    <div class="moon"></div>
+    <div class="sunrise"></div>
+    <div class="scene-number">01</div>
+    <div class="story">
+      <p class="eyebrow">FIRST THING...</p>
+      <h2 class="reveal-line">You're gonna<br><span>wake up.</span></h2>
+      <p class="sub">And your day is about to get interesting...</p>
+    </div>
+    <button class="nextBtn" data-next>WHAT'S NEXT? <span>→</span></button>
+  </section>
+
+  <!-- 2 HUSBAND -->
+  <section class="screen husband" data-screen="2">
+    <div class="spotlight"></div>
+    <div class="scene-number">02</div>
+    <div class="story">
+      <p class="eyebrow">AND THEN...</p>
+      <h2 class="handsome">You're gonna come see<br><span>your handsome husband</span> 😌</h2>
+      <div class="heart-pulse">♥</div>
+    </div>
+    <button class="nextBtn" data-next>KEEP GOING <span>→</span></button>
+  </section>
+
+  <!-- 3 DRIVE -->
+  <section class="screen drive" data-screen="3">
+    <div class="road"><div class="road-line"></div></div>
+    <div class="car">🚗</div>
+    <div class="route route1"></div><div class="route route2"></div>
+    <div class="scene-number">03</div>
+    <div class="story bottomStory">
+      <p class="eyebrow">THEN...</p>
+      <h2>We're gonna<br><span>drive to Delhi.</span></h2>
+      <p class="sub">Just you, me & a long drive.</p>
+    </div>
+    <button class="nextBtn" data-next>LET'S GO <span>→</span></button>
+  </section>
+
+  <!-- 4 MUSIC/GOSSIP -->
+  <section class="screen musicScene" data-screen="4">
+    <div class="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="floating-note n1">♪</div>
+    <div class="floating-note n2">♫</div>
+    <div class="floating-note n3">♪</div>
+    <div class="scene-number">04</div>
+    <div class="story">
+      <p class="eyebrow">THE RIDE...</p>
+      <h2>Chatting.<br>Gossiping.<br><span>Our favourite music.</span> 🎶</h2>
+      <p class="sub">Exactly how a good road trip should be.</p>
+    </div>
+    <button class="nextBtn" data-next>AND THEN... <span>→</span></button>
+  </section>
+
+  <!-- 5 COFFEE -->
+  <section class="screen coffee" data-screen="5">
+    <div class="coffee-glow"></div>
+    <div class="cup">☕</div>
+    <div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div>
+    <div class="scene-number">05</div>
+    <div class="story">
+      <p class="eyebrow">OH, AND ONE MORE THING...</p>
+      <h2>Remember...</h2>
+      <p class="coffee-text">I make really good<br><span>coffee.</span></p>
+      <p class="sub">That counts for something, right? 😉</p>
+    </div>
+    <button class="nextBtn" data-next>ONE MORE THING <span>→</span></button>
+  </section>
+
+  <!-- 6 LUNCH -->
+  <section class="screen lunch" data-screen="6">
+    <div class="plate"><span>🍽️</span></div>
+    <div class="food f1">✦</div><div class="food f2">✦</div><div class="food f3">✦</div>
+    <div class="scene-number">06</div>
+    <div class="story">
+      <p class="eyebrow">OBVIOUSLY...</p>
+      <h2>We're gonna have<br><span>some great lunch.</span> 🍽️</h2>
+      <p class="sub">Because a long drive deserves good food.</p>
+    </div>
+    <button class="nextBtn" data-next>KEEP GOING <span>→</span></button>
+  </section>
+
+  <!-- 7 PHOTOS -->
+  <section class="screen photos" data-screen="7">
+    <div class="photo p1">📸</div>
+    <div class="photo p2">🤳</div>
+    <div class="photo p3">❤️</div>
+    <div class="photo p4">📷</div>
+    <div class="scene-number">07</div>
+    <div class="story">
+      <p class="eyebrow">AND YES...</p>
+      <h2>A BUNCHHHHH<br>OF <span>PICTURES.</span> 📸</h2>
+      <p class="sub">Probably way too many.<br>But we're keeping all of them.</p>
+    </div>
+    <button class="nextBtn" data-next>SMILE! <span>→</span></button>
+  </section>
+
+  <!-- 8 OUTFITS -->
+  <section class="screen outfits" data-screen="8">
+    <div class="hanger">♧</div>
+    <div class="outfit-card o1">🤵</div>
+    <div class="outfit-card o2">👔</div>
+    <div class="scene-number">08</div>
+    <div class="story">
+      <p class="eyebrow">OH... ONE LAST THING 👀</p>
+      <h2>I'm gonna try my<br><span>wedding outfits.</span> 🤵‍♂️</h2>
+      <p class="sub">And you're gonna adore me. 😌❤️</p>
+    </div>
+    <button class="nextBtn" data-next>AND THEN... <span>→</span></button>
+  </section>
+
+  <!-- 9 DLF -->
+  <section class="screen shopping" data-screen="9">
+    <div class="shopping-bag">🛍️</div>
+    <div class="bag2">🛍️</div>
+    <div class="sparkle sp1">✦</div><div class="sparkle sp2">✦</div><div class="sparkle sp3">✦</div>
+    <div class="scene-number">09</div>
+    <div class="story">
+      <p class="eyebrow">AND OF COURSE...</p>
+      <h2>We're gonna go to<br><span>DLF.</span> 🛍️</h2>
+      <p class="sub">And you're gonna do your shopping. 😌</p>
+    </div>
+    <button class="nextBtn" data-next>THERE'S MORE... <span>→</span></button>
+  </section>
+
+  <!-- 10 BUILD UP -->
+  <section class="screen build" data-screen="10">
+    <div class="scene-number">10</div>
+    <div class="story">
+      <p class="eyebrow">SO BASICALLY...</p>
+      <div class="list">
+        <span>GOOD MUSIC 🎶</span>
+        <span>LONG DRIVE 🚗</span>
+        <span>GOSSIP 🤭</span>
+        <span>GOOD FOOD 🍽️</span>
+        <span>GOOD COFFEE ☕</span>
+        <span>LOTS OF PICTURES 📸</span>
+        <span>SHOPPING 🛍️</span>
+        <span>AND YOU + ME ❤️</span>
+      </div>
+    </div>
+    <button class="nextBtn" data-next>ONE LAST THING... <span>→</span></button>
+  </section>
+
+  <!-- 11 I KNOW YOU -->
+  <section class="screen know" data-screen="11">
+    <div class="dark-pulse"></div>
+    <div class="scene-number">11</div>
+    <div class="story">
+      <p class="eyebrow">BE HONEST...</p>
+      <h2>I know you...</h2>
+      <h3>You <span>love it.</span> 😌</h3>
+      <p class="sub">Don't even pretend otherwise.</p>
+    </div>
+    <button class="nextBtn bigNext" data-next>PRESS YAY <span>→</span></button>
+  </section>
+
+  <!-- 12 YAY -->
+  <section class="screen yayScreen" data-screen="12">
+    <div class="yayGlow"></div>
+    <div class="scene-number">12</div>
+    <div class="story">
+      <p class="eyebrow">YOU KNOW YOU WANT TO...</p>
+      <h2>PRESS</h2>
+      <button id="yayBtn" class="yayBtn">YAY! ♥</button>
+      <p class="maze">“MAZE MAZE” 😂❤️</p>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="screen final" data-screen="13">
+    <div class="finalGlow"></div>
+    <div class="finalEnvelope">
+      <div class="finalLetter">
+        <div class="finalHeart">♥</div>
+        <p class="eyebrow">I KNEW IT</p>
+        <h2>You said YES!</h2>
+        <p>MAZE MAZE! 😂❤️</p>
+        <strong>IT'S A DATE!</strong>
+        <small>26TH AUGUST • 7:00 AM</small>
+      </div>
+      <div class="finalFold"></div>
+    </div>
+    <div class="husbandReveal"><p>YOUR HUSBAND LOVES YOU. ❤️</p><div class="photoFrame"><img src="images/husband.jpg" alt="A special photo"></div></div>
+    <p class="finalText">Be ready. I'm coming to pick you up. 🚗❤️</p>
+  </section>
+
+</main>
 
 <script src="script.js"></script>
 </body>
